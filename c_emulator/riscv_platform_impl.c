@@ -3,6 +3,7 @@
 #include <stdio.h>
 
 /* Settings of the platform implementation, with common defaults. */
+<<<<<<< HEAD
 uint64_t rv_pmp_count = 0;
 uint64_t rv_pmp_grain = 0;
 
@@ -17,9 +18,17 @@ bool rv_enable_vext = true;
 bool rv_enable_bext = false;
 bool rv_enable_zicbom = false;
 bool rv_enable_zicboz = false;
+=======
+bool rv_enable_pmp                  = false;
+bool rv_enable_zfinx                = false;
+bool rv_enable_rvc                  = true;
+bool rv_enable_next                 = false;
+bool rv_enable_writable_misa        = true;
+bool rv_enable_fdext                = true;
+>>>>>>> 16b97eb19239751a3aceed1b894809c7c5178c13
 
-bool rv_enable_dirty_update = false;
-bool rv_enable_misaligned = false;
+bool rv_enable_dirty_update         = false;
+bool rv_enable_misaligned           = false;
 bool rv_mtval_has_illegal_inst_bits = false;
 bool rv_enable_writable_fiom = true;
 
@@ -33,8 +42,7 @@ uint64_t rv_rom_size = UINT64_C(0x100);
 uint64_t rv_cache_block_size_exp = UINT64_C(6);
 
 // Provides entropy for the scalar cryptography extension.
-uint64_t rv_16_random_bits(void)
-{
+uint64_t rv_16_random_bits(void) {
   // This function can be changed to support deterministic sequences of
   // pseudo-random bytes. This is useful for testing.
   const char *name = "/dev/urandom";
@@ -49,6 +57,9 @@ uint64_t rv_16_random_bits(void)
 
 uint64_t rv_clint_base = UINT64_C(0x2000000);
 uint64_t rv_clint_size = UINT64_C(0xc0000);
+
+uint64_t rv_plic_base = UINT64_C(0x0C000000);
+uint64_t rv_plic_size = UINT64_C(0x2100);		// Single hart is assumed
 
 uint64_t rv_htif_tohost = UINT64_C(0x80001000);
 uint64_t rv_insns_per_tick = UINT64_C(100);
