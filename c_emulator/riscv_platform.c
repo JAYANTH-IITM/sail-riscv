@@ -18,53 +18,8 @@ bool sys_enable_next(unit u)
 bool sys_enable_fdext(unit u)
 { return rv_enable_fdext; }
 
-bool sys_enable_svinval(unit u)
-{
-  return rv_enable_svinval;
-}
-
-bool sys_enable_zcb(unit u)
-{
-  return rv_enable_zcb;
-}
-
 bool sys_enable_zfinx(unit u)
 { return rv_enable_zfinx; }
-
-bool sys_enable_writable_fiom(unit u)
-{
-  return rv_enable_writable_fiom;
-}
-
-bool sys_enable_vext(unit u)
-{
-  return rv_enable_vext;
-}
-
-bool sys_enable_bext(unit u)
-{
-  return rv_enable_bext;
-}
-
-bool sys_enable_zicbom(unit u)
-{
-  return rv_enable_zicbom;
-}
-
-bool sys_enable_zicboz(unit u)
-{
-  return rv_enable_zicboz;
-}
-
-uint64_t sys_pmp_count(unit u)
-{
-  return rv_pmp_count;
-}
-
-uint64_t sys_pmp_grain(unit u)
-{
-  return rv_pmp_grain;
-}
 
 bool sys_enable_writable_misa(unit u)
 { return rv_enable_writable_misa; }
@@ -78,12 +33,9 @@ bool plat_enable_misaligned_access(unit u)
 bool plat_mtval_has_illegal_inst_bits(unit u)
 { return rv_mtval_has_illegal_inst_bits; }
 
-<<<<<<< HEAD
-=======
 bool plat_enable_pmp(unit u)
 { return rv_enable_pmp; }
 
->>>>>>> 16b97eb19239751a3aceed1b894809c7c5178c13
 mach_bits plat_ram_base(unit u)
 { return rv_ram_base; }
 
@@ -96,21 +48,9 @@ mach_bits plat_rom_base(unit u)
 mach_bits plat_rom_size(unit u)
 { return rv_rom_size; }
 
-mach_bits plat_cache_block_size_exp()
-{
-  return rv_cache_block_size_exp;
-}
-
 // Provides entropy for the scalar cryptography extension.
-<<<<<<< HEAD
-mach_bits plat_get_16_random_bits(unit u)
-{
-  return rv_16_random_bits();
-}
-=======
 mach_bits plat_get_16_random_bits()
 { return rv_16_random_bits(); }
->>>>>>> 16b97eb19239751a3aceed1b894809c7c5178c13
 
 mach_bits plat_clint_base(unit u)
 { return rv_clint_base; }

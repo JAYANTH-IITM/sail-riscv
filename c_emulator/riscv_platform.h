@@ -4,22 +4,13 @@
 bool sys_enable_rvc(unit);
 bool sys_enable_next(unit);
 bool sys_enable_fdext(unit);
-bool sys_enable_svinval(unit);
-bool sys_enable_zcb(unit);
 bool sys_enable_zfinx(unit);
 bool sys_enable_writable_misa(unit);
-bool sys_enable_writable_fiom(unit);
-bool sys_enable_vext(unit);
-bool sys_enable_bext(unit);
-bool sys_enable_zicbom(unit);
-bool sys_enable_zicboz(unit);
-
-uint64_t sys_pmp_count(unit);
-uint64_t sys_pmp_grain(unit);
 
 bool plat_enable_dirty_update(unit);
 bool plat_enable_misaligned_access(unit);
 bool plat_mtval_has_illegal_inst_bits(unit);
+bool plat_enable_pmp(unit);
 
 mach_bits plat_ram_base(unit);
 mach_bits plat_ram_size(unit);
@@ -28,10 +19,8 @@ bool within_phys_mem(mach_bits, sail_int);
 mach_bits plat_rom_base(unit);
 mach_bits plat_rom_size(unit);
 
-mach_bits plat_cache_block_size_exp(unit);
-
 // Provides entropy for the scalar cryptography extension.
-mach_bits plat_get_16_random_bits(unit);
+mach_bits plat_get_16_random_bits();
 
 mach_bits plat_clint_base(unit);
 mach_bits plat_clint_size(unit);
